@@ -71,10 +71,12 @@ Can also download for learning offline.
 
 *Links*
 
-- [scratch_homepage][https://scratch.mit.edu/]
+- [Scratch Homepage][scratch_homepage]
 - [Download 1.4](https://scratch.mit.edu/scratch_1.4/)
 - [Download](https://scratch.mit.edu/scratch2download/)
 - [Online class at Harvey Mudd using Scratch](https://www.edx.org/course/programming-scratch-harveymuddx-cs002x)
+
+[scratch_homepage]: https://scratch.mit.edu/
 
 
 ### Racket
