@@ -5,13 +5,13 @@ online.
 
 Languages and resources to check out
 
-- Scratch is a fun, graphical language aimed at school kids.
+- [Scratch][scratch_homepage] is a fun, graphical language aimed at school kids.
   Creating animations and sounds is easy, and kids (and adults) learn
   a lot.
-- Python is a great general purpose language. (I use it every day.)
-- C is an imperative language that is old, but still used everywhere.
-- Java is an object oriented language used by big corporations. It's very well documented.
-- Racket is a functional language aimed at teaching college students.
+- [Python][learn_python_the_hard_way] is a great general purpose language. (I use it every day.)
+- [C][learn_c_the_hard_way] is an imperative language that is old, but still used everywhere.
+- [Java][java_oracle_tutorials] is an object oriented language used by big corporations. It's very well documented.
+- [Racket][racket_with_pictures] is a functional language aimed at teaching college students.
   Like Scratch it's easy to use, emphasizes things you can see
   (initially,) and teaches important concepts.
 
@@ -26,8 +26,8 @@ Racket with Pictures][racket_with_pictures].
 
 Note: a coworker warns me that Zed (the author of "the hard way"
 websites) cusses a lot when he lectures. The website uses clean 
-language, and I imagine the videos do too, but I've never actually
-watched them.
+language, so perhaps the videos do too, but I've never
+watched them. The written tutorials were plenty for me.
 
 
 ## Online resources by category
@@ -39,7 +39,7 @@ General purpose language.
 
 I use this one daily at work and for many personal projects.
 
-Found on all major linux systems. (That includes [Raspbian](http://www.raspbian.org/) for the Raspberry Pi.)
+Found on all major Linux systems. (That includes [Raspbian](http://www.raspbian.org/) for the Raspberry Pi.)
 
 Can also install/run on windows.
 
@@ -62,7 +62,7 @@ Can also install/run on windows.
 
 Graphical language aimed at kids.
 
-A 9 year old presented on Scratch at OpenWest last year. He had a surprisingly good understanding of programming principles.
+A kid presented on Scratch at OpenWest last year. He had a surprisingly good understanding of programming principles.
 
 Can use online after registering.
 
@@ -71,7 +71,7 @@ Can also download for learning offline.
 
 *Links*
 
-- https://scratch.mit.edu/
+- [scratch_homepage][https://scratch.mit.edu/]
 - [Download 1.4](https://scratch.mit.edu/scratch_1.4/)
 - [Download](https://scratch.mit.edu/scratch2download/)
 - [Online class at Harvey Mudd using Scratch](https://www.edx.org/course/programming-scratch-harveymuddx-cs002x)
@@ -99,7 +99,7 @@ just click and go no matter your system.
 
 Procedural language. High level language compared to assembly. 
 
-Is what linux is written in.
+Is what Linux is written in.
 
 Is not C++. 
 
@@ -118,12 +118,11 @@ Has a good "Learn C the Hard Way" course http://c.learncodethehardway.org/book/ 
 
 Object Oriented Programming language.
 
-Is *not* javascript.
+Is *not* Javascript.
 
 Tutorials to walk you through the language.
 
-The eclipse editor is a popular editor for java.
-https://www.eclipse.org/downloads/
+The [eclipse editor][eclipse_download] is a popular editor for Java.
 
 Watch [MIT Introduction to Programming with Java][mit_intro_java] if you prefer lectures to reading.
 
@@ -132,6 +131,7 @@ Watch [MIT Introduction to Programming with Java][mit_intro_java] if you prefer 
 - [Download Eclipse Editor][eclipse_download] Editors and IDEs make 
 http://docs.oracle.com/javase/tutorial/java/index.html
 
+[java_oracle_tutorials]: http://docs.oracle.com/javase/tutorial/java/index.html
 [mit_intro_java]: http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-092-introduction-to-programming-in-java-january-iap-2010 "MIT Introduction to Programming in Java"
 
 ### For questions
