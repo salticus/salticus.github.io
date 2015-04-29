@@ -1,19 +1,5 @@
-# Resources for understanding git #
+# Resources #
 
-## Visual Demonstrations
+[git links](./links/git.html)
 
-- [http://marklodato.github.io/visual-git-guide/index-en.html](http://marklodato.github.io/visual-git-guide/index-en.html)
-- [http://ndpsoftware.com/git-cheatsheet.html](http://ndpsoftware.com/git-cheatsheet.html)
-- [http://justinhileman.info/article/git-pretty/git-pretty.png](http://justinhileman.info/article/git-pretty/git-pretty.png)
-
-## Crash Courses
-
-- [http://think-like-a-git.net/epic.html](http://think-like-a-git.net/epic.html)
-- [http://gitimmersion.com/](http://gitimmersion.com/)
-- [http://jk.gs/gitglossary.html](http://jk.gs/gitglossary.html)
-
-## Good References
-
-- [http://gitref.org/basic/](http://gitref.org/basic/)
-- [http://git-scm.com/doc](http://git-scm.com/doc)
-- [http://git.kernel.org/cgit/git/git-htmldocs.git/plain/user-manual.html](http://git.kernel.org/cgit/git/git-htmldocs.git/plain/user-manual.html) From the creators of git.
+[learning to program](./blog/learning-to-program.html)
