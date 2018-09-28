@@ -2,5 +2,5 @@ baseurl = "http://salticus.github.io/"
 languageCode = "en-us"
 title = "Robert's rather humble homepage"
 uglyUrls = true
-theme = "arabica"
+theme = "scratch"
 publishDir = "docs"
