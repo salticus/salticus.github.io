@@ -9,8 +9,8 @@
 
 ## Crash Courses
 
-- [http://gitimmersion.com/](http://gitimmersion.com/)
-- [http://jk.gs/gitglossary.html](http://jk.gs/gitglossary.html)
+- [http://gitimmersion.com/](http://gitimmersion.com/) Great for beginners.
+- [http://jk.gs/gitglossary.html](http://jk.gs/gitglossary.html) Great if you want the internals.
 
 ## Good References
 
