@@ -3,3 +3,4 @@ languageCode = "en-us"
 title = "Robert's rather humble homepage"
 uglyUrls = true
 theme = "arabica"
+publishDir = "docs"
