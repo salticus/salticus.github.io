@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Robert&#39;s rather humble homepage</title>
+    <link>http://salticus.github.io/blog.html</link>
+    <description>Recent content in Blogs on Robert&#39;s rather humble homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://salticus.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://salticus.github.io/blog/learning-to-program.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://salticus.github.io/blog/learning-to-program.html</guid>
+      <description>Learning to Program For general purpose programming there are a lot of good resources online.
+Some programming languages and resources to check out:
+ Scratch is a fun, graphical language aimed at school kids. Creating animations and sounds is easy, and kids (and adults) learn a lot. Python is a great general purpose language. (I use it every day.) C is an imperative language that is old, but still used everywhere.</description>
+    </item>
+    
+  </channel>
+</rss>
