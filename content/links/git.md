@@ -9,7 +9,6 @@
 
 ## Crash Courses
 
-- [http://think-like-a-git.net/epic.html](http://think-like-a-git.net/epic.html)
 - [http://gitimmersion.com/](http://gitimmersion.com/)
 - [http://jk.gs/gitglossary.html](http://jk.gs/gitglossary.html)
 
