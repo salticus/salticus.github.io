@@ -3,4 +3,3 @@ languageCode = "en-us"
 title = "Robert's rather humble homepage"
 uglyUrls = true
 theme = "scratch"
-publishDir = "docs"
