@@ -5,7 +5,6 @@
 - [http://marklodato.github.io/visual-git-guide/index-en.html](http://marklodato.github.io/visual-git-guide/index-en.html)
 - [http://ndpsoftware.com/git-cheatsheet.html](http://ndpsoftware.com/git-cheatsheet.html)
 - [http://justinhileman.info/article/git-pretty/git-pretty.png](http://justinhileman.info/article/git-pretty/git-pretty.png)
-- [http://www.patrickzahnd.ch/wp-content/uploads/2014/02/git-transport-v1.pdf](http://www.patrickzahnd.ch/wp-content/uploads/2014/02/git-transport-v1.pdf)
 
 ## Crash Courses
 
