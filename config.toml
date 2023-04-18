@@ -1,5 +1,19 @@
 baseurl = "http://salticus.github.io/"
 languageCode = "en-us"
 title = "Robert's rather humble homepage"
+theme = "etch"
 uglyUrls = true
-theme = "scratch"
+
+[params]
+  description = "Robert's rather humble homepage"
+  dark = "auto"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+  [[menu.main]]
+    identifier = "links"
+  [[menu.main]]
+    identifier = "slides"
+  [[menu.main]]
+    identifier = "talks"
