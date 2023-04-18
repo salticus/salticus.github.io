@@ -9,10 +9,10 @@
 ## Crash Courses
 
 - [http://gitimmersion.com/](http://gitimmersion.com/) Great for beginners.
-- [http://jk.gs/gitglossary.html](http://jk.gs/gitglossary.html) Great if you want the internals.
+- [https://git-scm.com/docs/gitglossary](https://git-scm.com/docs/gitglossary) Great if you want the internals.
 
 ## Good References
 
 - [https://git.github.io/git-reference/basic/](https://git.github.io/git-reference/basic/)
 - [http://git-scm.com/doc](http://git-scm.com/doc)
-- [http://git.kernel.org/cgit/git/git-htmldocs.git/plain/user-manual.html](http://git.kernel.org/cgit/git/git-htmldocs.git/plain/user-manual.html) From the creators of git.
+- [http://git.kernel.org/cgit/git/git-htmldocs.git/plain/user-manual.html](http://git.kernel.org/cgit/git/git-htmldocs.git/plain/user-manual.html) From the creators of git. Load with w3m, then hit v.
