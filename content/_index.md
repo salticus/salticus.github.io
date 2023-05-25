@@ -2,7 +2,7 @@
 
 [git links](./links/git.html)
 
-[learning to program](./blog/learning-to-program.html)
+[learning to program](./posts/learning-to-program.html)
 
 [learning strategies](./links/learning_strategies.html)
 
