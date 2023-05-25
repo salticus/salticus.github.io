@@ -1,2 +1,4 @@
 public
-themes/arabica
+themes/*
+.hugo_build.lock
+resources/_gen

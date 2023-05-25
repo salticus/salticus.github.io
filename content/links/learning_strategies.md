@@ -1,4 +1,4 @@
-# Resources for Learning Strategies #
+# Learning Strategies #
 
 ## Asking Questions
 

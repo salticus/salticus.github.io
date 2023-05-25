@@ -1,3 +1,8 @@
++++
+date = '2018-02-28'
+description = 'Advice on learning to program. Somewhat dated, but still useful.'
++++
+
 # Learning to Program
 
 For general purpose programming there are a *lot* of good resources online. 
