@@ -1,11 +1,15 @@
 baseurl = "http://salticus.github.io/"
 languageCode = "en-us"
 title = "Robert's rather humble homepage"
+
 theme = "etch"
+
 uglyUrls = true
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
 
 [params]
-  description = "Robert's rather humble homepage"
+  description = "Robert's rather humble blog"
   dark = "auto"
 
 [menu]
