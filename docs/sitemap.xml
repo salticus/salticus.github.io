@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://salticus.github.io/</loc>
+    </url>
+    <url>
+        <loc>http://salticus.github.io/links/</loc>
+    </url>
+    <url>
+        <loc>http://salticus.github.io/links/git/</loc>
+    </url>
+    <url>
+        <loc>http://salticus.github.io/links/learning-strategies/</loc>
+    </url>
+    <url>
+        <loc>http://salticus.github.io/posts/</loc>
+    </url>
+    <url>
+        <loc>http://salticus.github.io/posts/learning-to-program/</loc>
+        <lastmod>2018-02-28</lastmod>
+    </url>
+    <url>
+        <loc>http://salticus.github.io/slides/</loc>
+    </url>
+    <url>
+        <loc>http://salticus.github.io/talks/python-utah-north-a-quick-taste-of-pytest/</loc>
+        <lastmod>2015-11-19</lastmod>
+    </url>
+</urlset>
