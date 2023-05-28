@@ -2,5 +2,7 @@ base_url = "http://salticus.github.io/"
 
 output_dir = "docs"
 
+ignored_content = ["**/src/*"]
+
 [markdown]
 highlight_code = true
