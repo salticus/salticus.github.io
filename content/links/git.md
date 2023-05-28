@@ -1,4 +1,6 @@
-# Resources for understanding git #
++++
+title = "Understanding Git"
++++
 
 ## Visual Demonstrations
 
