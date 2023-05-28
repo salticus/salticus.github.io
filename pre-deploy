@@ -3,4 +3,4 @@
 set -x
 zola check
 zola build
-
+touch docs/.nojekyll
