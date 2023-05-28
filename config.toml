@@ -1,4 +1,6 @@
 base_url = "http://salticus.github.io/"
 
+output_dir = "docs"
+
 [markdown]
 highlight_code = true
