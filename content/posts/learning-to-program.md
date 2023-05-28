@@ -111,7 +111,7 @@ Has a good "Learn C the Hard Way" course http://c.learncodethehardway.org/book/ 
 - [C Standard Library][c_stdlib]
 
 [learn_c_the_hard_way]: http://c.learncodethehardway.org/book/ "Learn C the hard way"
-[c_stdlib]: https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/index.html "C Standard Library"
+[c_stdlib]: https://en.wikibooks.org/wiki/C_Programming/Standard_libraries
     
 
 ### Java
