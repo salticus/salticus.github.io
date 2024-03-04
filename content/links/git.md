@@ -6,7 +6,7 @@ title = "Understanding Git"
 
 - [http://marklodato.github.io/visual-git-guide/index-en.html](http://marklodato.github.io/visual-git-guide/index-en.html)
 - [http://ndpsoftware.com/git-cheatsheet.html](http://ndpsoftware.com/git-cheatsheet.html)
-- [git-pretty.png](/images/git-pretty.png) (locally hosted from the wayback machine; the original author seems to be [https://github.com/bobthecow](https://github.com/bobthecow))
+- [git-pretty.png](/images/git-pretty.png) (Local copy retrieved from the wayback machine. The original author seems to be [https://github.com/bobthecow](https://github.com/bobthecow))
 
 ## Crash Courses
 
