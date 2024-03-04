@@ -29,8 +29,8 @@ will step you through everything you need to do.
 If you get discouraged with setting up Python, [download
 Racket][racket_download] and do the [Introduction to Racket with Pictures][racket_with_pictures].
 
-Note: a coworker warns me that Zed (the author of "the hard way"
-websites) cusses a lot when he lectures. The website uses clean 
+Note: a coworker warns me that Zed's lectures (the author of "the hard way"
+websites) contain a lot of objectionable language. The website uses nice 
 language, so perhaps the videos do too, but I've never
 watched them. The written tutorials were plenty for me.
 
@@ -156,17 +156,18 @@ In each all of those browsers one can also look for Tools or Developer Tools in 
 
 ### For questions
 
-- check out http://stackoverflow.com/ 
+- check out [http://stackoverflow.com/](stackoverflow)
 - email me. I am more than happy to help. 
 - do what the professionals do: grab a stuffed animal and explain your
-  problem to it. If this sounds odd, see [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging). Also watch
+  problem to it. If this sounds odd, see [Rubber Duck Debugging](rubber_duck_debugging). Also watch
   Castaway and note the role that Wilson plays in the film.
 
 
 
 [eclipse_download]: http://www.eclipse.org/downloads/packages/release/Neon/2
-[java_oracle_tutorials]: http://docs.oracle.com/javase/tutorial/java/index.html
+[stackoverflow]: http://stackoverflow.com/
 [java_download]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+[java_oracle_tutorials]: http://docs.oracle.com/javase/tutorial/java/index.html
 [javascript_com]: https://www.javascript.com
 [javascript_reference]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [learn_python_the_hard_way]: http://learnpythonthehardway.org/book/ (Recommended)
@@ -176,3 +177,4 @@ In each all of those browsers one can also look for Tools or Developer Tools in 
 [mit_intro_to_programming]: http://ocw.mit.edu/courses/intro-programming/
 [python_beginners]: https://wiki.python.org/moin/BeginnersGuide
 [scratch_homepage]: https://scratch.mit.edu/
+[rubber_duck_debugging]: https://en.wikipedia.org/wiki/Rubber_duck_debugging
