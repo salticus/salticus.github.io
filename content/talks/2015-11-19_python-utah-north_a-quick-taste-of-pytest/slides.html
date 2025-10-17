@@ -73,7 +73,7 @@ def greet(msg="Students and professionals, good evening!"):
 ```
 
 ---
-Python has at least half dozen modules for interpreting python code, each designed to provide another perspective to the program.
+Python has at least five modules for interpreting python code, each designed to provide another perspective to the program.
 
 ---
 layout: true
@@ -186,14 +186,12 @@ layout: false
 - detailed error output
 - parametrization
 
-(Small gotcha: for historical reasons, pytest is run with a dot between py and test: `py.test`)
-
 ---
 class: center, middle
 ### Pytest discovery is simple: if it starts with "test_" pytest will pick it up and run it.
 ---
 
-### test discovery (i.e. let py.test figure out what needs to run)
+### test discovery (i.e. let pytest figure out what needs to run)
 
 ```
 # hello.py
@@ -212,7 +210,7 @@ if "__main__" == __name__:
 ```
 
 ```
-$ py.test hello.py
+$ pytest hello.py
 =============================== test session starts ================================
 platform linux2 -- Python 2.7.6 -- py-1.4.27 -- pytest-2.6.3
 plugins: capturelog
@@ -249,7 +247,7 @@ if "__main__" == __name__:
 ---
 
 ```
-$ py.test hello.py
+$ pytest hello.py
 =============================== test session starts ================================
 platform linux2 -- Python 2.7.6 -- py-1.4.27 -- pytest-2.6.3
 plugins: capturelog
@@ -307,7 +305,7 @@ def test_hello(who):
 
 ---
 ```
-*$ py.test
+*$ pytest
 =============================== test session starts ================================
 platform linux2 -- Python 2.7.6 -- py-1.4.27 -- pytest-2.6.3
 plugins: capturelog
@@ -318,7 +316,7 @@ test_hello.py ....
 ============================= 4 passed in 0.05 seconds =============================
 $
 ```
-Hey, look, now that our tests are in `test_hello.py` py.test can find it without being told what file to look in!
+Hey, look, now that our tests are in `test_hello.py` pytest can find it without being told what file to look in!
 
 ???
 Anyone notice something odd here? I see four dots representing four tests.
@@ -326,7 +324,7 @@ Anyone notice something odd here? I see four dots representing four tests.
 ---
 
 ```
-$ py.test -v
+$ pytest -v
 =============================== test session starts ================================
 platform linux2 -- Python 2.7.6 -- py-1.4.27 -- pytest-2.6.3 -- /home/buckles/.virtualenvs/test-mdp/bin/python
 plugins: capturelog
@@ -395,7 +393,7 @@ class: center, middle
 
 ### People (Look for their talks on pyvideo)
 
-Holger Krekel - py.test guy, located in Germany
+Holger Krekel - pytest guy, located in Germany
 
 [Michael Foord](https://agileabstractions.com/) Creator of the Python "Mocks" library
 
