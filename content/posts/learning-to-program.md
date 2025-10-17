@@ -44,7 +44,7 @@ General purpose language.
 
 I use this one daily at work and for many personal projects.
 
-Found on all major Linux systems. (That includes [Raspbian](http://www.raspbian.org/) for the Raspberry Pi.)
+Found on all major Linux systems. (That includes the [Raspberry Pi OS](https://www.raspberrypi.com/documentation/computers/os.html) which is a derivative of [Debian](https://www.debian.org/).)
 
 Can also install/run on windows.
 
@@ -156,10 +156,10 @@ In each all of those browsers one can also look for Tools or Developer Tools in 
 
 ### For questions
 
-- check out [http://stackoverflow.com/](stackoverflow)
+- check out [https://stackoverflow.com/][stackoverflow]
 - email me. I am more than happy to help. 
 - do what the professionals do: grab a stuffed animal and explain your
-  problem to it. If this sounds odd, see [Rubber Duck Debugging](rubber_duck_debugging). Also watch
+  problem to it. If this sounds odd, see [Rubber Duck Debugging][rubber_duck_debugging]. Also watch
   Castaway and note the role that Wilson plays in the film.
 
 
