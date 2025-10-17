@@ -59,8 +59,6 @@ Automated tests help you
 (That's probably too general an approach, as you'll shortly see.)
 ---
 
-layout: true
-
 ### Thinking about programs in different ways.
 
 How many ways can python interpret the following program?
@@ -73,7 +71,25 @@ def greet(msg="Students and professionals, good evening!"):
 ```
 
 ---
-Python has at least five modules for interpreting python code, each designed to provide another perspective to the program.
+
+### Python's standard library
+
+The Python standard library has at least **twelve** modules to interpret code. 
+
+1. pydoc
+1. pdb
+1. profile
+1. unittest
+1. doctest
+1. tabnanny
+1. trace
+1. py_compile
+1. compileall
+1. dis
+1. tokenize
+1. ast
+
+Let's look at a few of these in action.
 
 ---
 layout: true
@@ -87,11 +103,11 @@ def greet(msg="Students and professionals, good evening!"):
     print(msg)
 ```
 ---
-### as documentation and as source code
+### #1 pydoc generates documentation from source code
 
 ```bash
 
-*$ python -m pydoc hello
+*$ python -m pydoc hello.py
 
 Help on module hello:
 
@@ -107,40 +123,12 @@ FUNCTIONS
 
 $
 ```
----
-### as currently running code in a REPL session
-```bash
-*$ python -i hello.py
-Students and professionals, good evening!
->>> greet("This presentation is on testing in python.")
-This presentation is on testing in python.
->>>
-```
-???
-Python allows us to drop into the repl and run more commands after executing this program.
-
 
 ---
-### as a series of function calls to be optimized
-```bash
-*$ python -m profile hello.py
-Students and professionals, good evening!
-       4 function calls in 0.001 seconds
+### #2 pdb provides a debugging REPL
 
-    Ordered by: standard name
+REPL: Read-Evaluate-Print Loop
 
-    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-    1    0.001    0.001    0.001    0.001 :0(setprofile)
-    1    0.000    0.000    0.000    0.000 hello.py:2(<module>)
-    1    0.000    0.000    0.000    0.000 hello.py:2(greet)
-    1    0.000    0.000    0.001    0.001 profile:0(<code object <module> at 0x7f7cade89a30, file "hello.py", line 2>)
-    0    0.000             0.000          profile:0(profiler)
-```
-???
-If this is a wildly successful hello world program, then perhaps we'll want to optimize.
-
----
-### as code to debug
 ```bash
 *$ python -m pdb hello.py
 > /home/buckles/Documents/learn/python/hello.py(2)<module>()
@@ -160,8 +148,34 @@ If this is a wildly successful hello world program, then perhaps we'll want to o
 (Pdb)
 ```
 
+???
+REPL: Read-Evaluate-Print Loop
+Python allows us to drop into the repl and run more commands after executing this program.
+
 ---
-### as code with tests to run
+
+### #3 profile measures the time spent in each function call
+
+```bash
+*$ python -m profile hello.py
+Students and professionals, good evening!
+       4 function calls in 0.001 seconds
+
+    Ordered by: standard name
+
+    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    1    0.001    0.001    0.001    0.001 :0(setprofile)
+    1    0.000    0.000    0.000    0.000 hello.py:2(<module>)
+    1    0.000    0.000    0.000    0.000 hello.py:2(greet)
+    1    0.000    0.000    0.001    0.001 profile:0(<code object <module> at 0x7f7cade89a30, file "hello.py", line 2>)
+    0    0.000             0.000          profile:0(profiler)
+```
+???
+If this is a wildly successful hello world program, then perhaps we'll want to optimize.
+
+---
+### #4 unittest looks for tests to run
+
 ```bash
 
 $ python -m unittest hello
@@ -188,7 +202,7 @@ layout: false
 
 ---
 class: center, middle
-### Pytest discovery is simple: if it starts with "test_" pytest will pick it up and run it.
+### Pytest discovery: if the name starts with "test_" pytest runs it.
 ---
 
 ### test discovery (i.e. let pytest figure out what needs to run)
@@ -200,7 +214,7 @@ def greet(who="Students and professionals"):
     return "{}, good evening!".format(who)
 
 
-def test_hello():
+*def test_hello():
     greeting = greet()
     assert greeting == "Students and professionals, good evening!"
 
@@ -210,7 +224,7 @@ if "__main__" == __name__:
 ```
 
 ```
-$ pytest hello.py
+*$ pytest hello.py
 =============================== test session starts ================================
 platform linux2 -- Python 2.7.6 -- py-1.4.27 -- pytest-2.6.3
 plugins: capturelog
@@ -221,28 +235,67 @@ hello.py .
 ============================= 1 passed in 0.02 seconds =============================
 $
 ```
----
-layout: true
-
-### detailed failure output
 
 ---
+
+### If the file name begins with "test_", then pytest runs it automagically
 
 ```
-# hello.py
+*# test_hello.py
 def greet(who="Students and professionals"):
     "Create a greeting"
     return "{}, good evening!".format(who)
 
 
-def test_hello():
-    greeting = greet("Ladies and Gentlemen")
+*def test_hello():
+    greeting = greet()
     assert greeting == "Students and professionals, good evening!"
 
 
 if "__main__" == __name__:
     greet()
+```
 
+```bash
+*$ pytest
+=============================== test session starts ================================
+platform linux2 -- Python 2.7.6 -- py-1.4.27 -- pytest-2.6.3
+plugins: capturelog
+collected 4 items
+
+test_hello.py .
+
+============================= 4 passed in 0.05 seconds =============================
+$
+```
+Hey, look, now that our tests are in `test_hello.py` pytest can find it without being told what file to look in!
+
+---
+class: center, middle
+### Detailed failure output
+---
+
+layout: true
+
+### Detailed failure output
+
+---
+
+```
+ # hello.py
+ def greet(who="Students and professionals"):
+     "Create a greeting"
+     return "{}, good evening!".format(who)
+ 
+ 
+ def test_hello():
+*    greeting = greet("Ladies and Gentlemen")
+*    assert greeting == "Students and professionals, good evening!"
+ 
+ 
+ if "__main__" == __name__:
+     greet()
+ 
 ```
 ---
 
@@ -262,27 +315,32 @@ ____________________________________ test_hello ________________________________
             greeting = greet("Ladies and Gentlemen")
             >       assert greeting == "Students and professionals, good evening!"
             E       assert 'Ladies and G...good evening!' == 'Students and ...good evening!'
-            E         - Ladies and Gentlemen, good evening!
-            E         + Students and professionals, good evening!
+*           E         - Ladies and Gentlemen, good evening!
+*           E         + Students and professionals, good evening!
 
 hello.py:9: AssertionError
 ============================= 1 failed in 0.04 seconds =============================
 $
 ```
+
+---
+layout: false
+class: center, middle
+
+### Parametrizing tests
+
 ---
 
 layout: true
-### parametrizing tests
+
+### Parametrizing tests
 
 ---
 
-Some tips: 
-
-- Put your tests into a different module/file from the code they test. 
-- For bigger projects, put them in a whole different package/directory.
+Let's put our code and tests in separate modules.
 
 ```
-# hello.py
+*# hello.py
 def greet(who="Students and professionals"):
     "Create a greeting"
     return "{}, good evening!".format(who)
@@ -292,34 +350,16 @@ if "__main__" == __name__:
 ```
 
 ```
-# test_hello.py
+*# test_hello.py
 
 import pytest
 import hello
 
-@pytest.mark.parametrize('who', 'Boss')
+*@pytest.mark.parametrize('who', 'Boss')
 def test_hello(who):
     greeting = hello.greet(who)
     assert greeting == "{}, good evening!".format(who)
 ```
-
----
-```
-*$ pytest
-=============================== test session starts ================================
-platform linux2 -- Python 2.7.6 -- py-1.4.27 -- pytest-2.6.3
-plugins: capturelog
-collected 4 items
-
-test_hello.py ....
-
-============================= 4 passed in 0.05 seconds =============================
-$
-```
-Hey, look, now that our tests are in `test_hello.py` pytest can find it without being told what file to look in!
-
-???
-Anyone notice something odd here? I see four dots representing four tests.
 
 ---
 
@@ -330,10 +370,10 @@ platform linux2 -- Python 2.7.6 -- py-1.4.27 -- pytest-2.6.3 -- /home/buckles/.v
 plugins: capturelog
 collected 4 items
 
-test_hello.py::test_hello[B] PASSED
-test_hello.py::test_hello[o] PASSED
-test_hello.py::test_hello[s] PASSED
-test_hello.py::test_hello[s] PASSED
+*test_hello.py::test_hello[B] PASSED
+*test_hello.py::test_hello[o] PASSED
+*test_hello.py::test_hello[s] PASSED
+*test_hello.py::test_hello[s] PASSED
 
 ============================= 4 passed in 0.05 seconds =============================
 $
@@ -345,19 +385,19 @@ Whoops. Forgot that strings act as lists of letters.
 
 Let's try that again with a real list this time.
 ```
-# test_hello.py
-
-import pytest
-import hello
-
-
-@pytest.mark.parametrize('who', [
-            "Ladies and gentlemen",
-            "Students and professionals",
-            "Hackers and engineers"])
-def test_greet(who):
-    greeting = hello.greet(who)
-    assert greeting == "{}, good evening!".format(who)
+ # test_hello.py
+ 
+ import pytest
+ import hello
+ 
+ 
+*@pytest.mark.parametrize('who', [
+*            "Ladies and gentlemen",
+*            "Students and professionals",
+*            "Hackers and engineers"])
+ def test_greet(who):
+     greeting = hello.greet(who)
+     assert greeting == "{}, good evening!".format(who)
 ```
 
 ---
