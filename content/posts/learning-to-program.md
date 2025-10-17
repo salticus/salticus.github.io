@@ -21,7 +21,7 @@ Some programming languages and resources to check out:
   really has almost _nothing_ to do with Java other than having it in its name.
   It looks like C, but it is evolving quickly.
 
-## Start with Python and [Learn Python the Hard Way](http://learnpythonthehardway.org/book/) 
+## Start with Python and [Learn Python the Hard Way](https://learnpythonthehardway.org/book/) 
 
 Setting things up takes some effort, but it's worth sticking with it. Zed
 will step you through everything you need to do.
@@ -50,7 +50,7 @@ Can also install/run on windows.
 
 *Links*
 
-- http://learnpythonthehardway.org/book/ [Learn Python the Hard Way is recommended][learn_python_the_hard_way]
+- https://learnpythonthehardway.org/book/ [Learn Python the Hard Way is recommended][learn_python_the_hard_way]
 - [https://wiki.python.org/moin/BeginnersGuide][python_beginners]
 - [MIT Introduction to Programming courses][mit_intro_to_programming]
     - [Introduction to CS][mit_intro_cs]
@@ -90,9 +90,9 @@ just click and go no matter your system.
 - [Introduction with Pictures][racket_with_pictures]
 - [Racket Home Page][racket_homepage]
 
-[racket_with_pictures]: http://docs.racket-lang.org/quick/
-[racket_download]: http://download.racket-lang.org/
-[racket_homepage]: http://racket-lang.org/
+[racket_with_pictures]: https://docs.racket-lang.org/quick/
+[racket_download]: https://download.racket-lang.org/
+[racket_homepage]: https://racket-lang.org/
 
 
 ### C
@@ -103,14 +103,14 @@ Is what Linux is written in.
 
 Is not C++. 
 
-Has a good "Learn C the Hard Way" course http://c.learncodethehardway.org/book/ (Recommended.)
+Has a good "Learn C the Hard Way" course https://c.learncodethehardway.org/book/ (Recommended.)
 
 *Links*
 
 - [Learn C the Hard Way][learn_c_the_hard_way]
 - [C Standard Library][c_stdlib]
 
-[learn_c_the_hard_way]: http://c.learncodethehardway.org/book/ "Learn C the hard way"
+[learn_c_the_hard_way]: https://c.learncodethehardway.org/book/ "Learn C the hard way"
 [c_stdlib]: https://en.wikibooks.org/wiki/C_Programming/Standard_libraries
     
 
@@ -164,17 +164,17 @@ In each all of those browsers one can also look for Tools or Developer Tools in 
 
 
 
-[eclipse_download]: http://www.eclipse.org/downloads/packages/release/Neon/2
-[stackoverflow]: http://stackoverflow.com/
-[java_download]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-[java_oracle_tutorials]: http://docs.oracle.com/javase/tutorial/java/index.html
+[eclipse_download]: https://www.eclipse.org/downloads/packages/release/Neon/2
+[stackoverflow]: https://stackoverflow.com/
+[java_download]: https://www.oracle.com/technetwork/java/javase/downloads/index.html
+[java_oracle_tutorials]: https://docs.oracle.com/javase/tutorial/java/index.html
 [javascript_com]: https://www.javascript.com
 [javascript_reference]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[learn_python_the_hard_way]: http://learnpythonthehardway.org/book/ (Recommended)
-[mit_gentle_intro]: http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011
-[mit_intro_cs]: http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011
-[mit_intro_java]: http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-092-introduction-to-programming-in-java-january-iap-2010 "MIT Introduction to Programming in Java"
-[mit_intro_to_programming]: http://ocw.mit.edu/courses/intro-programming/
+[learn_python_the_hard_way]: https://learnpythonthehardway.org/book/ (Recommended)
+[mit_gentle_intro]: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011
+[mit_intro_cs]: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011
+[mit_intro_java]: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-092-introduction-to-programming-in-java-january-iap-2010 "MIT Introduction to Programming in Java"
+[mit_intro_to_programming]: https://ocw.mit.edu/courses/intro-programming/
 [python_beginners]: https://wiki.python.org/moin/BeginnersGuide
 [scratch_homepage]: https://scratch.mit.edu/
 [rubber_duck_debugging]: https://en.wikipedia.org/wiki/Rubber_duck_debugging
