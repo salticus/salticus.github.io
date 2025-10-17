@@ -16,7 +16,7 @@
 
 ## Structured Learning
 
-- [Coursera](https://www.coursera.org/) provides free access to university level classes. Classes include videos, TAs and online forums. There are many other [MOOC](https://en.wikipedia.org/wiki/Massive_open_online_course#Notable_providers)s to check out. Some examples:
+- [Coursera](https://www.coursera.org/) provides free access to university level classes. Classes include videos, TAs and online forums. There are many other [MOOC](https://en.wikipedia.org/wiki/List_of_MOOC_providers)s to check out. Some examples:
 - [Khan Academy](https://www.khanacademy.org/) is aimed at K-12, which means it is very approachable if you are starting off fresh on a topic.
 - [MIT Open Course Ware](https://ocw.mit.edu/index.htm) has excellent content in the format of videos and PDFs.
 - [edX](https://www.edx.org/)
