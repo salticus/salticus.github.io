@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Rust &amp; FLTK">
+  <title>Product Basket</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/js/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="/js/revealjs/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="/js/revealjs/dist/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="/js/revealjs/dist/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="./custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Product Basket</h1>
+  <p class="author">Rust &amp; FLTK</p>
+  <p class="date">A (mostly) fictional project</p>
+</section>
+
+<section>
+<section id="the-plot" class="title-slide slide level1">
+<h1>The plot</h1>
+
+</section>
+<section id="in-a-nearby-an-office" class="slide level2">
+<h2>In a nearby an office</h2>
+<div class="frontdesk">
+<p><em>How do you convert product IDs to hyperlinks?</em></p>
+</div>
+<div class="support">
+<p>In Microsoft Excel, try</p>
+<pre><code>=CONCAT(&quot;https://example.com/products?id=&quot;, A1)</code></pre>
+</div>
+<div class="frontdesk">
+<p><em>That’s programming! I could never program!</em></p>
+</div>
+<div class="support">
+<p>Maybe we could vibe code an app.</p>
+</div>
+</section>
+<section id="requirements" class="slide level2">
+<h2>Requirements</h2>
+<ul>
+<li>Runs on Microsoft Windows</li>
+<li>Single file executable</li>
+<li>Windowed GUI</li>
+<li>Cut and Paste</li>
+</ul>
+</section>
+<section id="proposed-solution" class="slide level2">
+<h2>Proposed Solution</h2>
+<ul>
+<li>Nix: simple* build environment.</li>
+<li>Rust: easy LLM coding. (better error messages make for fewer bugs
+when “vibe” coding.)</li>
+<li>FLTK: small cross platform GUI library. Statically linkable.</li>
+</ul>
+<aside class="notes">
+<p>Nix has a reputation for making cross platform building easy. Maybe
+it was not necessary here.</p>
+</aside>
+</section></section>
+<section>
+<section id="project-setup" class="title-slide slide level1">
+<h1>Project Setup</h1>
+
+</section>
+<section id="nix-flake-init" class="slide level2">
+<h2><code>nix flake init</code></h2>
+<pre><code class="language-nix"># flake.nix
+{
+    description = &quot;Product Basket&quot;;
+    inputs = {
+        nixpkgs.url = &quot;https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst&quot;;
+    }
+    outputs = inputs: {
+        packages =
+        {
+            # Minimalist GNU for Windows (MinGW) configuration
+            # to build 
+        };
+
+        devShells =
+        {
+            # local Linux build, for development
+        };
+    }
+}</code></pre>
+</section>
+<section id="cargo-new-basket" class="slide level2">
+<h2><code>cargo new basket</code></h2>
+<pre><code>basket/
+    Cargo.toml
+    src/
+        main.rs</code></pre>
+</section></section>
+<section>
+<section id="what-about-an-icon" class="title-slide slide level1">
+<h1>What about an icon?</h1>
+
+</section>
+<section id="where-does-an-icon-live" class="slide level2">
+<h2>Where does an icon live?</h2>
+<ul>
+<li>MS Windows embeds icons into the executable. Great!</li>
+<li>Linux: a desktop file points to program and icon files.</li>
+<li>MacOS: the icon is part of the package. (?)</li>
+</ul>
+</section>
+<section id="have-rust-embed-the-icon" class="slide level2">
+<h2>Have Rust embed the icon</h2>
+<h3 id="crate-winresource">crate winresource</h3>
+<p>A <a
+href="https://doc.rust-lang.org/cargo/reference/build-scripts.html">build.rs</a>
+file runs at compile time.</p>
+<pre><code class="language-rust">fn main() {
+    // Embed the application icon into the Windows executable.
+    if std::env::var(&quot;CARGO_CFG_TARGET_OS&quot;).as_deref() == Ok(&quot;windows&quot;) {
+        winresource::WindowsResource::new()
+            .set_icon(&quot;assets/basket.ico&quot;)
+            .compile()
+            .expect(&quot;failed to embed Windows icon&quot;);
+    }
+}</code></pre>
+<aside class="notes">
+<p>The build.rs file is used to handle external dependencies like C
+libraries, etc. OK, why not use the MinGW utility?</p>
+<p>And how exactly does this work?</p>
+</aside>
+</section></section>
+<section>
+<section id="got-questions-i-do" class="title-slide slide level1">
+<h1>Got questions? I do!</h1>
+
+</section>
+<section id="where-should-icon-embedding-belong" class="slide level2">
+<h2>Where should icon embedding belong?</h2>
+<p>MinGW provides a <code>winres</code> utility to embed icons. Why use
+Rust build time?</p>
+</section>
+<section id="was-nix-even-needed" class="slide level2">
+<h2>Was Nix even needed?</h2>
+<p>You do need to get MinGW from somewhere. Nix was a convenient
+spot.</p>
+<p>But does Cargo include something to target windows anyways? (Yes and
+no.)</p>
+</section>
+<section id="the-abi-rabbit-hole" class="slide level2">
+<h2>The ABI rabbit hole</h2>
+<p>Operating systems expect a certain format for executables.</p>
+<p>Linux: Executable and Linking Format (<a
+href="https://wiki.osdev.org/ELF">ELF</a>)</p>
+<p>Microsoft Windows: Portable Executable (<a
+href="https://learn.microsoft.com/en-us/windows/win32/debug/pe-format">PE</a>)</p>
+<p>Application Binary Interface (ABI) actually refers to… the whole set
+of operating system interfaces? (It seems to in Linux, at least.)</p>
+</section>
+<section id="whats-the-word-on-rust-build-scripts" class="slide level2">
+<h2>What’s the word on rust build scripts?</h2>
+</section></section>
+<section id="thanks" class="title-slide slide level1">
+<h1>Thanks!</h1>
+
+</section>
+    </div>
+  </div>
+
+  <script src="/js/revealjs/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="/js/revealjs/dist/plugin/notes.js"></script>
+  <script src="/js/revealjs/dist/plugin/search.js"></script>
+  <script src="/js/revealjs/dist/plugin/zoom.js"></script>
+  <script src="/js/revealjs/dist/plugin/highlight.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
